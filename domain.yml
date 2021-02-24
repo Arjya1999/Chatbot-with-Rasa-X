@@ -1,0 +1,83 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+responses:
+  utter_greet:
+  - text: "Hey! Are you a admin, vendor or customer?"
+    buttons:
+    - title: "Admin"
+      payload: goodbye
+    - title: "Vendor"
+      payload: vendor
+    - title: "Customer"
+      payload: customer
+      
+  utter_querry:
+  - text: "Great! What would you like to know about?"
+    buttons:
+    - title: "Banking"
+      payload: utter_goodbye
+    - title: "Engineering Services"
+      payload: engineering services
+    - title: "finance"
+      payload: utter_goodbye
+    - title: "others"
+      payload: utter_goodbye
+   
+  utter_es:
+  - text: "Okay! What would you like to know?"
+    buttons:
+    - title: "Product"
+      payload: product
+    - title: "Career"
+      payload: utter_goodbye
+    - title: "Contacts"
+      payload: utter_goodbye
+    - title: "Blogs"
+      payload: utter_goodbye
+
+  utter_product:
+  - text: "Okay! Which product you are considering?"
+    buttons:
+    - title: "Chatbots"
+      payload: chatbot
+    - title: "Others"
+      payload: utter_goodbye
+  
+  utter_chatbot:
+  - text: "Okay! Which chatbot you are considering?"
+    buttons:
+    - title: "Q&A Chatbot"
+      payload: utter_goodbye
+    - title: "Dialouge based Chatbots"
+      payload: utter_goodbye
+    - title: "Other"
+      payload: utter_goodbye
+      
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
